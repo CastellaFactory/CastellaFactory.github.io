@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on カステラ工場</title>
+    <link>http://castellafactory.github.io/tags/test/</link>
+    <description>Recent content in Test on カステラ工場</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 15 Mar 2016 00:28:23 +0900</lastBuildDate>
+    <atom:link href="http://castellafactory.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>記事生成のテスト</title>
+      <link>http://castellafactory.github.io/post/test/</link>
+      <pubDate>Tue, 15 Mar 2016 00:28:23 +0900</pubDate>
+      
+      <guid>http://castellafactory.github.io/post/test/</guid>
+      <description>
+
+&lt;h1 id=&#34;テスト:b128b7694e4de962e0088bcb1bcb254f&#34;&gt;テスト&lt;/h1&gt;
+
+&lt;p&gt;記事生成のテストでございます&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
