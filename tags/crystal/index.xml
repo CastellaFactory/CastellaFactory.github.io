@@ -10,7 +10,7 @@
     <atom:link href="http://castellafactory.github.io/tags/crystal/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>CrystalでSlackに通知する</title>
+      <title>CrystalでSlackに通知を送る</title>
       <link>http://castellafactory.github.io/post/crystal-slack-post/</link>
       <pubDate>Tue, 15 Mar 2016 17:34:34 +0900</pubDate>
       
@@ -33,7 +33,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;1-webhook-urlの発行:ce8263583588ba0f64873dc4b2aa4b7e&#34;&gt;1. Webhook URLの発行&lt;/h2&gt;
+&lt;h2 id=&#34;1-webhook-urlの発行:af036f3f43fec6a7afe9fac1f5c07c6a&#34;&gt;1. Webhook URLの発行&lt;/h2&gt;
 
 &lt;p&gt;まずWebhook URLを発行します．&lt;/p&gt;
 
@@ -46,11 +46,11 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;2-webhook-urlに対してpostする:ce8263583588ba0f64873dc4b2aa4b7e&#34;&gt;2. Webhook URLに対してpostする&lt;/h2&gt;
+&lt;h2 id=&#34;2-webhook-urlに対してpostする:af036f3f43fec6a7afe9fac1f5c07c6a&#34;&gt;2. Webhook URLに対してpostする&lt;/h2&gt;
 
 &lt;p&gt;Slackに通知を送るには拙作の&lt;a href=&#34;https://github.com/CastellaFactory/slack-incoming-webhooks&#34;&gt;slack-incoming-webhooks&lt;/a&gt;を使います．&lt;/p&gt;
 
-&lt;h3 id=&#34;インストール:ce8263583588ba0f64873dc4b2aa4b7e&#34;&gt;インストール&lt;/h3&gt;
+&lt;h3 id=&#34;インストール:af036f3f43fec6a7afe9fac1f5c07c6a&#34;&gt;インストール&lt;/h3&gt;
 
 &lt;p&gt;shard.ymlのdependenciesに以下を追加してください．&lt;/p&gt;
 
@@ -73,7 +73,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;簡単な使い方:ce8263583588ba0f64873dc4b2aa4b7e&#34;&gt;簡単な使い方&lt;/h3&gt;
+&lt;h3 id=&#34;簡単な使い方:af036f3f43fec6a7afe9fac1f5c07c6a&#34;&gt;簡単な使い方&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-crystal&#34;&gt;require &amp;quot;slack-incoming-webhooks&amp;quot;
 
@@ -82,7 +82,7 @@ slack = Slack::IncomingWebhooks.new &amp;quot;Your WEBHOOK_URL&amp;quot;
 slack.post &amp;quot;Hello&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;../../images/slack-crystal-img1.png&#34; alt=&#34;img1&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/crystal-slack-post/img1.png&#34; alt=&#34;img1&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます．&lt;/p&gt;
 
@@ -91,13 +91,13 @@ slack.post &amp;quot;Hello&amp;quot;
                                                         icon_emoji: &amp;quot;:ghost:&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;../../images/slack-crystal-img2.png&#34; alt=&#34;img2&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/crystal-slack-post/img2.png&#34; alt=&#34;img2&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;指定できるオプションは&lt;a href=&#34;https://api.slack.com/methods/chat.postMessage&#34;&gt;こちら&lt;/a&gt;を参照してください．&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;attachments:ce8263583588ba0f64873dc4b2aa4b7e&#34;&gt;Attachments&lt;/h3&gt;
+&lt;h3 id=&#34;attachments:af036f3f43fec6a7afe9fac1f5c07c6a&#34;&gt;Attachments&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://api.slack.com/docs/attachments&#34;&gt;attachments&lt;/a&gt;を使うことで，
 よりリッチなフォーマットのテキストを送ることが出来ます．&lt;/p&gt;
@@ -114,13 +114,13 @@ attachment = Slack::Attachment.new author_name: &amp;quot;hoge&amp;quot;,
 slack.post &amp;quot;text with attachments&amp;quot;, attachments: [attachment]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;../../images/slack-crystal-img3.png&#34; alt=&#34;img3&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/crystal-slack-post/img3.png&#34; alt=&#34;img3&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;指定できるオプションは&lt;a href=&#34;https://api.slack.com/docs/attachments&#34;&gt;こちら&lt;/a&gt;を参照してください．&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;所感:ce8263583588ba0f64873dc4b2aa4b7e&#34;&gt;所感&lt;/h2&gt;
+&lt;h2 id=&#34;所感:af036f3f43fec6a7afe9fac1f5c07c6a&#34;&gt;所感&lt;/h2&gt;
 
 &lt;p&gt;初めてのCrystalでしたが，
 ドキュメントを読みながらなんとか動くところまでいけました．&lt;/p&gt;

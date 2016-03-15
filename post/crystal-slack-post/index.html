@@ -43,8 +43,8 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://castellafactory.github.io/index.xml">
 
     
-    <title>CrystalでSlackに通知する - カステラ工場</title>
-    <meta property='og:title' content="CrystalでSlackに通知する - カステラ工場">
+    <title>CrystalでSlackに通知を送る - カステラ工場</title>
+    <meta property='og:title' content="CrystalでSlackに通知を送る - カステラ工場">
     <meta property="og:type" content="article">
     
 
@@ -90,7 +90,7 @@
         <article class="single well" itemscope="itemscope" itemtype="http://schema.org/Article">
             <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://castellafactory.github.io"/>
             <meta itemprop="dateModified" content="2016-03-15T17:34:34&#43;09:00">
-            <meta itemprop="headline" content="CrystalでSlackに通知する">
+            <meta itemprop="headline" content="CrystalでSlackに通知を送る">
             <meta itemprop="description" content="SlackにはAPIが備わっており，APIを使えば簡単にSlackに 通知を送ることが出来ます． 今回はIncoming WebHooks APIを使ってCrys">
             <meta itemprop="url" content="http://castellafactory.github.io/post/crystal-slack-post/">
             <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -110,7 +110,7 @@
                 <meta itemprop="name" content="CastellaFactory">
             </div>
             <header class="article-header">
-                <h1>CrystalでSlackに通知する</h1>
+                <h1>CrystalでSlackに通知を送る</h1>
                 
                 <time itemprop="datePublished" pubdate="pubdate" datetime="2016-03-15T17:34:34&#43;09:00"><i class="fa fa-clock-o"></i> Posted on March 15, 2016</time>
                 
@@ -135,7 +135,7 @@
 
 <hr />
 
-<h2 id="1-webhook-urlの発行:ce8263583588ba0f64873dc4b2aa4b7e">1. Webhook URLの発行</h2>
+<h2 id="1-webhook-urlの発行:af036f3f43fec6a7afe9fac1f5c07c6a">1. Webhook URLの発行</h2>
 
 <p>まずWebhook URLを発行します．</p>
 
@@ -148,11 +148,11 @@
 
 <hr />
 
-<h2 id="2-webhook-urlに対してpostする:ce8263583588ba0f64873dc4b2aa4b7e">2. Webhook URLに対してpostする</h2>
+<h2 id="2-webhook-urlに対してpostする:af036f3f43fec6a7afe9fac1f5c07c6a">2. Webhook URLに対してpostする</h2>
 
 <p>Slackに通知を送るには拙作の<a href="https://github.com/CastellaFactory/slack-incoming-webhooks">slack-incoming-webhooks</a>を使います．</p>
 
-<h3 id="インストール:ce8263583588ba0f64873dc4b2aa4b7e">インストール</h3>
+<h3 id="インストール:af036f3f43fec6a7afe9fac1f5c07c6a">インストール</h3>
 
 <p>shard.ymlのdependenciesに以下を追加してください．</p>
 
@@ -175,7 +175,7 @@
 
 <hr />
 
-<h3 id="簡単な使い方:ce8263583588ba0f64873dc4b2aa4b7e">簡単な使い方</h3>
+<h3 id="簡単な使い方:af036f3f43fec6a7afe9fac1f5c07c6a">簡単な使い方</h3>
 
 <pre><code class="language-crystal">require &quot;slack-incoming-webhooks&quot;
 
@@ -184,7 +184,7 @@ slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;
 slack.post &quot;Hello&quot;
 </code></pre>
 
-<p><img src="../../images/slack-crystal-img1.png" alt="img1" /></p>
+<p><img src="../../images/crystal-slack-post/img1.png" alt="img1" /></p>
 
 <p>また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます．</p>
 
@@ -193,13 +193,13 @@ slack.post &quot;Hello&quot;
                                                         icon_emoji: &quot;:ghost:&quot;
 </code></pre>
 
-<p><img src="../../images/slack-crystal-img2.png" alt="img2" /></p>
+<p><img src="../../images/crystal-slack-post/img2.png" alt="img2" /></p>
 
 <p>指定できるオプションは<a href="https://api.slack.com/methods/chat.postMessage">こちら</a>を参照してください．</p>
 
 <hr />
 
-<h3 id="attachments:ce8263583588ba0f64873dc4b2aa4b7e">Attachments</h3>
+<h3 id="attachments:af036f3f43fec6a7afe9fac1f5c07c6a">Attachments</h3>
 
 <p><a href="https://api.slack.com/docs/attachments">attachments</a>を使うことで，
 よりリッチなフォーマットのテキストを送ることが出来ます．</p>
@@ -216,13 +216,13 @@ attachment = Slack::Attachment.new author_name: &quot;hoge&quot;,
 slack.post &quot;text with attachments&quot;, attachments: [attachment]
 </code></pre>
 
-<p><img src="../../images/slack-crystal-img3.png" alt="img3" /></p>
+<p><img src="../../images/crystal-slack-post/img3.png" alt="img3" /></p>
 
 <p>指定できるオプションは<a href="https://api.slack.com/docs/attachments">こちら</a>を参照してください．</p>
 
 <hr />
 
-<h2 id="所感:ce8263583588ba0f64873dc4b2aa4b7e">所感</h2>
+<h2 id="所感:af036f3f43fec6a7afe9fac1f5c07c6a">所感</h2>
 
 <p>初めてのCrystalでしたが，
 ドキュメントを読みながらなんとか動くところまでいけました．</p>
