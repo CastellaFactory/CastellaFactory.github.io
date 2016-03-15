@@ -1,0 +1,23 @@
+/* Generics */
+@font-face {
+    font-family: "Cantarell";
+    src: url("/fonts/Cantarell-Regular-webfont.woff") format('woff');
+}
+
+body {
+    font-family: 'Cantarell', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #EEEEEE;
+}
+
+/* Sidebar */
+.navbar-default,
+.well {
+    background: #FFFFFF;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+}
