@@ -135,6 +135,8 @@ slack.post &amp;quot;text with attachments&amp;quot;, attachments: [attachment]
 
 &lt;p&gt;など，コメントがありましたら
 &lt;a href=&#34;https://github.com/CastellaFactory/slack-incoming-webhooks&#34;&gt;CastellaFactory/slack-incoming-webhooks&lt;/a&gt;までお願いします．&lt;/p&gt;
+
+&lt;hr /&gt;
 </description>
     </item>
     
