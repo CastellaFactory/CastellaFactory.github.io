@@ -43,12 +43,12 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://castellafactory.github.io/index.xml">
 
     
-    <title>Tags - カステラ工場</title>
-    <meta property='og:title' content="Tags - カステラ工場">
+    <title>Posts - カステラ工場</title>
+    <meta property='og:title' content="Posts - カステラ工場">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://castellafactory.github.io/tags/">
+    <meta property="og:url" content="http://castellafactory.github.io/post/">
     
     
 </head>
@@ -87,12 +87,21 @@
 <div class="row">
     <div class="col-lg-8">
 
-      <header class="title"><h1>Tags</h1></header>
+      <header class="title"><h1>Posts</h1></header>
 
-      
-      <a href="/tags/crystal/" class="tag">crystal</a>
-      
-      <a href="/tags/slack/" class="tag">slack</a>
+      <div class="articles">
+          
+            <article class="well">
+    <h2><a href="http://castellafactory.github.io/post/crystal-slack-post/">CrystalでSlackに通知する</a></h2>
+    <p><i class="fa fa-clock-o"></i> Posted on March 15, 2016</p>
+    
+    <p>SlackにはAPIが備わっており，APIを使えば簡単にSlackに 通知を送ることが出来ます． 今回はIncoming Webhooks APIを使ってCrystalでSlackに通知を送る方法を紹介します． 手順としては次のようになります． Webhook URLの発行 Wbehook URLに対してpostする 1. Webhook URLの発行 2. Webhook URLに対してpostする Slackに通知を送るには拙作のslack-incoming-webhooksを使います． インストール shard.ymlのdependenciesに以下を追加してください． slack-incoming-webhooks: github: CastellaFactory/slack-incoming-webhooks branch: master 追加できたら shards install もしくは crystal deps でインストールできます． 簡単な使い方 require &quot;slack-incoming-webhooks&quot; slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot; slack.post &quot;Hello&quot; また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます． slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;, channel: &quot;#hoge&quot;, username: &quot;Bot&quot;, icon_emoji: &quot;:ghost:&quot; 指定できるオプションはこちらを参照してください． Attachments attachmentsを使うことで， よりリッチなフォーマットのテキストを送ることが出来ます． require &quot;slack-incoming-webhooks&quot; slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot; attachment = Slack::Attachment.new author_name: &quot;hoge&quot;, author_icon:</p>
+    <a class="btn btn-primary" href="http://castellafactory.github.io/post/crystal-slack-post/">Read More <i class="fa fa-chevron-right"></i></a>
+</article>
+
+          
+      </div>
+
       
 
     </div>

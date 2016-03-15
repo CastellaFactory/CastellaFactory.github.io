@@ -43,12 +43,12 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://castellafactory.github.io/index.xml">
 
     
-    <title>about - カステラ工場</title>
-    <meta property='og:title' content="about - カステラ工場">
+    <title>CrystalでSlackに通知する - カステラ工場</title>
+    <meta property='og:title' content="CrystalでSlackに通知する - カステラ工場">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://castellafactory.github.io/about/">
+    <meta property="og:url" content="http://castellafactory.github.io/post/crystal-slack-post/">
     
     
 </head>
@@ -89,10 +89,10 @@
 
         <article class="single well" itemscope="itemscope" itemtype="http://schema.org/Article">
             <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://castellafactory.github.io"/>
-            <meta itemprop="dateModified" content="2016-03-15T00:05:41&#43;09:00">
-            <meta itemprop="headline" content="about">
-            <meta itemprop="description" content="">
-            <meta itemprop="url" content="http://castellafactory.github.io/about/">
+            <meta itemprop="dateModified" content="2016-03-15T17:34:34&#43;09:00">
+            <meta itemprop="headline" content="CrystalでSlackに通知する">
+            <meta itemprop="description" content="SlackにはAPIが備わっており，APIを使えば簡単にSlackに 通知を送ることが出来ます． 今回はIncoming Webhooks APIを使ってCrystalでSlackに通知を送る方法を紹介します． 手順としては次のようになります． Webhook URLの発行 Wbehook URLに対してpostする 1. Webhook URLの発行 2. Webhook URLに対してpostする Slackに通知を送るには拙作のslack-incoming-webhooksを使います． インストール shard.ymlのdependenciesに以下を追加してください． slack-incoming-webhooks: github: CastellaFactory/slack-incoming-webhooks branch: master 追加できたら shards install もしくは crystal deps でインストールできます． 簡単な使い方 require &quot;slack-incoming-webhooks&quot; slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot; slack.post &quot;Hello&quot; また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます． slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;, channel: &quot;#hoge&quot;, username: &quot;Bot&quot;, icon_emoji: &quot;:ghost:&quot; 指定できるオプションはこちらを参照してください． Attachments attachmentsを使うことで， よりリッチなフォーマットのテキストを送ることが出来ます． require &quot;slack-incoming-webhooks&quot; slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot; attachment = Slack::Attachment.new author_name: &quot;hoge&quot;, author_icon:">
+            <meta itemprop="url" content="http://castellafactory.github.io/post/crystal-slack-post/">
             <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="url" content="http://castellafactory.github.ioimages/default.jpg" />
                 <meta itemprop="width" content="800">
@@ -110,17 +110,124 @@
                 <meta itemprop="name" content="CastellaFactory">
             </div>
             <header class="article-header">
-                <h1>about</h1>
+                <h1>CrystalでSlackに通知する</h1>
                 
-                <time itemprop="datePublished" pubdate="pubdate" datetime="2016-03-15T00:05:41&#43;09:00"><i class="fa fa-clock-o"></i> Posted on March 15, 2016</time>
+                <time itemprop="datePublished" pubdate="pubdate" datetime="2016-03-15T17:34:34&#43;09:00"><i class="fa fa-clock-o"></i> Posted on March 15, 2016</time>
                 
             </header>
 
             
-            <p></p>
+            <p>
+
+<hr />
+
+<p>SlackにはAPIが備わっており，APIを使えば簡単にSlackに
+通知を送ることが出来ます．</p>
+
+<p>今回はIncoming Webhooks APIを使って<a href="http://crystal-lang.org">Crystal</a>でSlackに通知を送る方法を紹介します．</p>
+
+<p>手順としては次のようになります．</p>
+
+<ol>
+<li>Webhook URLの発行</li>
+<li>Wbehook URLに対してpostする</li>
+</ol>
+
+<hr />
+
+<h2 id="1-webhook-urlの発行:ce8263583588ba0f64873dc4b2aa4b7e">1. Webhook URLの発行</h2>
+
+<hr />
+
+<h2 id="2-webhook-urlに対してpostする:ce8263583588ba0f64873dc4b2aa4b7e">2. Webhook URLに対してpostする</h2>
+
+<p>Slackに通知を送るには拙作の<a href="https://github.com/CastellaFactory/slack-incoming-webhooks">slack-incoming-webhooks</a>を使います．</p>
+
+<h3 id="インストール:ce8263583588ba0f64873dc4b2aa4b7e">インストール</h3>
+
+<p>shard.ymlのdependenciesに以下を追加してください．</p>
+
+<pre><code class="language-yaml">slack-incoming-webhooks:
+  github: CastellaFactory/slack-incoming-webhooks
+  branch: master
+</code></pre>
+
+<p>追加できたら</p>
+
+<pre><code class="language-sh">shards install
+</code></pre>
+
+<p>もしくは</p>
+
+<pre><code class="language-sh">crystal deps
+</code></pre>
+
+<p>でインストールできます．</p>
+
+<hr />
+
+<h3 id="簡単な使い方:ce8263583588ba0f64873dc4b2aa4b7e">簡単な使い方</h3>
+
+<pre><code class="language-crystal">require &quot;slack-incoming-webhooks&quot;
+
+slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;
+
+slack.post &quot;Hello&quot;
+</code></pre>
+
+<p>また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます．</p>
+
+<pre><code class="language-crystal">slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;, channel: &quot;#hoge&quot;,
+                                                        username: &quot;Bot&quot;,
+                                                        icon_emoji: &quot;:ghost:&quot;
+</code></pre>
+
+<p>指定できるオプションは<a href="https://api.slack.com/methods/chat.postMessage">こちら</a>を参照してください．</p>
+
+<hr />
+
+<h3 id="attachments:ce8263583588ba0f64873dc4b2aa4b7e">Attachments</h3>
+
+<p><a href="https://api.slack.com/docs/attachments">attachments</a>を使うことで，
+よりリッチなフォーマットのテキストを送ることが出来ます．</p>
+
+<pre><code class="language-crystal">require &quot;slack-incoming-webhooks&quot;
+
+slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;
+
+attachment = Slack::Attachment.new author_name: &quot;hoge&quot;,
+                                   author_icon: &quot;http://...cool_icon&quot;,
+                                   color: &quot;#36a64f&quot;,
+                                   title: &quot;TITLE&quot;,
+                                   title_link: &quot;https://www.google.com&quot;
+
+slack.post &quot;text with attachments&quot;, attachments: [attachment]
+</code></pre>
+
+<p>指定できるオプションは<a href="https://api.slack.com/docs/attachments">こちら</a>を参照してください．</p>
+
+<hr />
+
+<h2 id="所感:ce8263583588ba0f64873dc4b2aa4b7e">所感</h2>
+
+<p>初めてのCrystalでしたが，
+ドキュメントを読みながらなんとか動くところまでいけました．</p>
+
+<p>(なぜかRubyではなくCrystalから入ってしまった)</p>
+
+<p>Crystal(やRuby)のことを分かっていないので，良くない点
+があるとは思います．</p>
+
+<p>&ldquo;ここがよくない&rdquo;</p>
+
+<p>&ldquo;ここはこうしたほうが良い&rdquo;</p>
+
+<p>など，コメントがありましたら
+<a href="https://github.com/CastellaFactory/slack-incoming-webhooks">CastellaFactory/slack-incoming-webhooks</a>までお願いします．</p>
+</p>
 
             <aside>
-                
+                <div class="section"><a href="http://castellafactory.github.iotags/crystal" class="tag">crystal</a> <a href="http://castellafactory.github.iotags/slack" class="tag">slack</a> </div>
                 
                 
 <div id="disqus_thread"></div>
