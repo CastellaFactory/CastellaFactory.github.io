@@ -22,7 +22,7 @@
 &lt;p&gt;SlackにはAPIが備わっており，APIを使えば簡単にSlackに
 通知を送ることが出来ます．&lt;/p&gt;
 
-&lt;p&gt;今回はIncoming Webhooks APIを使って&lt;a href=&#34;http://crystal-lang.org&#34;&gt;Crystal&lt;/a&gt;でSlackに通知を送る方法を紹介します．&lt;/p&gt;
+&lt;p&gt;今回はIncoming WebHooks APIを使って&lt;a href=&#34;http://crystal-lang.org&#34;&gt;Crystal&lt;/a&gt;でSlackに通知を送る方法を紹介します．&lt;/p&gt;
 
 &lt;p&gt;手順としては次のようになります．&lt;/p&gt;
 
@@ -34,6 +34,15 @@
 &lt;hr /&gt;
 
 &lt;h2 id=&#34;1-webhook-urlの発行:ce8263583588ba0f64873dc4b2aa4b7e&#34;&gt;1. Webhook URLの発行&lt;/h2&gt;
+
+&lt;p&gt;まずWebhook URLを発行します．&lt;/p&gt;
+
+&lt;p&gt;Slackのアプリケーションから通知を送りたいチームの設定の Apps &amp;amp; Custom Integrations を開きます．&lt;/p&gt;
+
+&lt;p&gt;まだチームに追加していない場合はIncoming WebHooksをチームに追加しましょう．&lt;/p&gt;
+
+&lt;p&gt;Incoming WebHooksの設定ページで ｢Add Configuration｣ ボタンを押し，
+通知を送りたいチャンネルを選択することでWebhook URLが発行できます．&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -113,8 +122,7 @@ slack.post &amp;quot;text with attachments&amp;quot;, attachments: [attachment]
 
 &lt;p&gt;(なぜかRubyではなくCrystalから入ってしまった)&lt;/p&gt;
 
-&lt;p&gt;Crystal(やRuby)のことを分かっていないので，良くない点
-があるとは思います．&lt;/p&gt;
+&lt;p&gt;Crystal(やRuby)のことを分かっていないので，良くない点が多々あるとは思います．&lt;/p&gt;
 
 &lt;p&gt;&amp;ldquo;ここがよくない&amp;rdquo;&lt;/p&gt;
 

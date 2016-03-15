@@ -91,7 +91,7 @@
             <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://castellafactory.github.io"/>
             <meta itemprop="dateModified" content="2016-03-15T17:34:34&#43;09:00">
             <meta itemprop="headline" content="CrystalでSlackに通知する">
-            <meta itemprop="description" content="SlackにはAPIが備わっており，APIを使えば簡単にSlackに 通知を送ることが出来ます． 今回はIncoming Webhooks APIを使ってCrystalでSlackに通知を送る方法を紹介します． 手順としては次のようになります． Webhook URLの発行 Wbehook URLに対してpostする 1. Webhook URLの発行 2. Webhook URLに対してpostする Slackに通知を送るには拙作のslack-incoming-webhooksを使います． インストール shard.ymlのdependenciesに以下を追加してください． slack-incoming-webhooks: github: CastellaFactory/slack-incoming-webhooks branch: master 追加できたら shards install もしくは crystal deps でインストールできます． 簡単な使い方 require &quot;slack-incoming-webhooks&quot; slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot; slack.post &quot;Hello&quot; また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます． slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;, channel: &quot;#hoge&quot;, username: &quot;Bot&quot;, icon_emoji: &quot;:ghost:&quot; 指定できるオプションはこちらを参照してください． Attachments attachmentsを使うことで， よりリッチなフォーマットのテキストを送ることが出来ます． require &quot;slack-incoming-webhooks&quot; slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot; attachment = Slack::Attachment.new author_name: &quot;hoge&quot;, author_icon:">
+            <meta itemprop="description" content="SlackにはAPIが備わっており，APIを使えば簡単にSlackに 通知を送ることが出来ます． 今回はIncoming WebHooks APIを使ってCrys">
             <meta itemprop="url" content="http://castellafactory.github.io/post/crystal-slack-post/">
             <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                 <meta itemprop="url" content="http://castellafactory.github.ioimages/default.jpg" />
@@ -124,7 +124,7 @@
 <p>SlackにはAPIが備わっており，APIを使えば簡単にSlackに
 通知を送ることが出来ます．</p>
 
-<p>今回はIncoming Webhooks APIを使って<a href="http://crystal-lang.org">Crystal</a>でSlackに通知を送る方法を紹介します．</p>
+<p>今回はIncoming WebHooks APIを使って<a href="http://crystal-lang.org">Crystal</a>でSlackに通知を送る方法を紹介します．</p>
 
 <p>手順としては次のようになります．</p>
 
@@ -136,6 +136,15 @@
 <hr />
 
 <h2 id="1-webhook-urlの発行:ce8263583588ba0f64873dc4b2aa4b7e">1. Webhook URLの発行</h2>
+
+<p>まずWebhook URLを発行します．</p>
+
+<p>Slackのアプリケーションから通知を送りたいチームの設定の Apps &amp; Custom Integrations を開きます．</p>
+
+<p>まだチームに追加していない場合はIncoming WebHooksをチームに追加しましょう．</p>
+
+<p>Incoming WebHooksの設定ページで ｢Add Configuration｣ ボタンを押し，
+通知を送りたいチャンネルを選択することでWebhook URLが発行できます．</p>
 
 <hr />
 
@@ -215,8 +224,7 @@ slack.post &quot;text with attachments&quot;, attachments: [attachment]
 
 <p>(なぜかRubyではなくCrystalから入ってしまった)</p>
 
-<p>Crystal(やRuby)のことを分かっていないので，良くない点
-があるとは思います．</p>
+<p>Crystal(やRuby)のことを分かっていないので，良くない点が多々あるとは思います．</p>
 
 <p>&ldquo;ここがよくない&rdquo;</p>
 
