@@ -82,12 +82,16 @@ slack = Slack::IncomingWebhooks.new &amp;quot;Your WEBHOOK_URL&amp;quot;
 slack.post &amp;quot;Hello&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;img src=&#34;../../images/slack-crystal-img1.png&#34; alt=&#34;img1&#34; /&gt;&lt;/p&gt;
+
 &lt;p&gt;また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます．&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-crystal&#34;&gt;slack = Slack::IncomingWebhooks.new &amp;quot;Your WEBHOOK_URL&amp;quot;, channel: &amp;quot;#hoge&amp;quot;,
                                                         username: &amp;quot;Bot&amp;quot;,
                                                         icon_emoji: &amp;quot;:ghost:&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../images/slack-crystal-img2.png&#34; alt=&#34;img2&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;指定できるオプションは&lt;a href=&#34;https://api.slack.com/methods/chat.postMessage&#34;&gt;こちら&lt;/a&gt;を参照してください．&lt;/p&gt;
 
@@ -103,13 +107,14 @@ slack.post &amp;quot;Hello&amp;quot;
 slack = Slack::IncomingWebhooks.new &amp;quot;Your WEBHOOK_URL&amp;quot;
 
 attachment = Slack::Attachment.new author_name: &amp;quot;hoge&amp;quot;,
-                                   author_icon: &amp;quot;http://...cool_icon&amp;quot;,
                                    color: &amp;quot;#36a64f&amp;quot;,
                                    title: &amp;quot;TITLE&amp;quot;,
                                    title_link: &amp;quot;https://www.google.com&amp;quot;
 
 slack.post &amp;quot;text with attachments&amp;quot;, attachments: [attachment]
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../images/slack-crystal-img3.png&#34; alt=&#34;img3&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;指定できるオプションは&lt;a href=&#34;https://api.slack.com/docs/attachments&#34;&gt;こちら&lt;/a&gt;を参照してください．&lt;/p&gt;
 
