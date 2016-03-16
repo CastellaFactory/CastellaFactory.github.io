@@ -162,7 +162,7 @@ slack = Slack::IncomingWebhooks.new &quot;Your WEBHOOK_URL&quot;
 slack.post &quot;Hello&quot;
 </code></pre>
 
-<p><img src="../../images/crystal-slack-post/img1.png" alt="img1" /></p>
+<p><img src="/images/crystal-slack-post/img1.png" alt="img1" /></p>
 
 <p>また，通知を送るチャンネルやユーザ名，アイコンの絵文字なども指定することが出来ます．</p>
 
@@ -171,7 +171,7 @@ slack.post &quot;Hello&quot;
                                                         icon_emoji: &quot;:ghost:&quot;
 </code></pre>
 
-<p><img src="../../images/crystal-slack-post/img2.png" alt="img2" /></p>
+<p><img src="/images/crystal-slack-post/img2.png" alt="img2" /></p>
 
 <p>指定できるオプションは<a href="https://api.slack.com/methods/chat.postMessage">こちら</a>を参照してください．</p>
 
@@ -194,7 +194,7 @@ attachment = Slack::Attachment.new author_name: &quot;hoge&quot;,
 slack.post &quot;text with attachments&quot;, attachments: [attachment]
 </code></pre>
 
-<p><img src="../../images/crystal-slack-post/img3.png" alt="img3" /></p>
+<p><img src="/images/crystal-slack-post/img3.png" alt="img3" /></p>
 
 <p>指定できるオプションは<a href="https://api.slack.com/docs/attachments">こちら</a>を参照してください．</p>
 
